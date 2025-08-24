@@ -1,0 +1,14 @@
+<div class="navbar">
+  <h1>I Wanna Mod</h1>
+  <p>.-* by <a href="https://coding398.dev" target="_blank">coding398</a> *-.</p>
+
+  <% if(locals.user) { %>
+    <a href="/" class="<%=page=='index' && 'selected'%>">Index</a>
+    <a href="/servers" class="<%=page=='servers' && 'selected'%>">Servers</a>
+    <a href="/mods" class="<%=page=='mods' && 'selected'%>">Mods</a>
+    <a href="/uploadmod" class="<%=page=='uploadmod' && 'selected'%>">UploadMod</a>
+    <a href="/hats" class="<%=page=='hats' && 'selected'%>">Hats</a>
+  <% } else { %>
+    <a href="/login" class="selected">Login</a>
+  <% } %>
+</div>

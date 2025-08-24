@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./components/basicHead') %>
+  </head>
+  <body>
+    <div class="app">
+      <%- include('./components/navigation') %>
+
+      <div class="content">
+        <h1>Welcome to I Wanna Mod!</h1>
+        <p>You're connected, initially as <%=user.username%>.</p>
+        <p>Last request: <%=user.lastRequest ? timeSince(user.lastRequest) : "never"%> ago.</p>
+
+        <hr>
+        <h2>Broke it? Here's the setup process again.</h2>
+        <p>First, locate your config.ini file.</p>
+        <li>Windows: %AppData%\Local\IWM\config.ini</li>
+        <li>Linux: /home/(user)/.local/share/Steam/steamapps/compatdata/???/IWM/config.ini</li>
+
+        <p>Click "Copy server hostnames" and paste them in the [Server] section.</p>
+        <button onclick='navigator.clipboard.writeText(`Image_hostname="<%=URL%>/img/"\nServer_hostname="<%=URL%>"\nServer_hostname_fallback="http://make.fangam.es"`) '>Copy server hostnames</button>
+      </div>
+    </div>
+  </body>
+</html>
