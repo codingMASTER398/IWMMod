@@ -26,7 +26,7 @@ router.use(
 );
 
 router.use(`/:password/api/v1`, async (req, res, next) => {
-  if(req.params.password.length !== 11) {
+  if(req.params.password.length > 36 || req.params.password.length < 5) {
     res.status(400).send(`Invalid password`)
     return;
   }
