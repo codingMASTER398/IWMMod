@@ -6,7 +6,10 @@ import { modList, modEnum } from "./mods";
 
 const router = express.Router();
 
-router.use(`/`, express.static(`./public`))
+router.use(`/`, express.static(`./public`, {
+  maxAge: 60 * 60 * 1000,
+  immutable: true,
+}))
 router.use(cookieParser())
 
 router.use(`/`, async (req, res, next)=>{

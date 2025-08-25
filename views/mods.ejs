@@ -9,22 +9,23 @@
 
       <div class="content">
         <h1>Mods</h1>
-        <p>Mods not marked as safe can very easily get you banned.</p>
+        <p>Mods not marked as cool aren't available on most servers.</p>
+        <p>the rest of them are about 20% cooler</p>
         
          <table>
           <tr class="title">
             <th>Name</th>
             <th>Description</th>
-            <th>Safe</th>
+            <th>Coolness</th>
             <th>On</th>
           </tr>
           <% modList.forEach((mod)=>{ %>
             <tr>
               <td><%=mod.name%></td>
               <td class="desc"><%=mod.description%></td>
-              <td><%=mod.safe ? "Yes": "NO"%></td>
+              <td><%=mod.safe ? "Cool": "Uncool"%></td>
               <td>
-                <input type="checkbox" <%= user.mods.includes(mod.name) && "checked" %> data-mod="<%=mod.name%>">
+                <input type="checkbox" <%=!mod.safe && "disabled"%> <%= user.mods.includes(mod.name) && "checked" %> data-mod="<%=mod.name%>">
               </td>
             </tr>
           <% }) %>

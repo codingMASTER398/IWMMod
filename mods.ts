@@ -7,15 +7,15 @@ const modList = [
     description: "Get access to admin-only tools, but most of them don't work.",
     safe: true,
   },
-  {
+  /*{
     name: "Disable mapcount",
     description: "Disable the map count text",
     safe: true,
-  },
+  },*/
   {
     name: "View in editor",
     description: "View any level in the editor, cleared or not",
-    safe: true,
+    safe: false,
   },
   {
     name: "Level stats",

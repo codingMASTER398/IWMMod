@@ -408,6 +408,8 @@ const objects = {
 
 
 export default function (mapData, mods) {
+    return mapData;
+
     let strData     = atob(mapData);
     let charData    = strData.split('').map(function(x){return x.charCodeAt(0);});
     let binData     = new Uint8Array(charData);
